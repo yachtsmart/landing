@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>YachSmart</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='shortcut icon' type='image/x-icon' href='./images/favicon.svg' />
+	<!-- Tailwind css -->
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<!-- Flip slider css -->
+	<link rel="stylesheet" href="./slider/flip-slider.css" />
+	<!-- Custom css -->
+	<style type="text/css">
+		.bg_pacific {
+			background: #36bdd1;
+		}
+		.bg_cerulean {
+			background: #144c7c;
+		}
+		.bg_turquoise {
+			background: #40c1ac;
+		}
+		.pt_full {
+			padding-top: 100%;
+		}
+	</style>
+</head>
+<body class="text-white text-center">
+	<div class="min-h-screen px-4 py-6" style="background: url(./images/background.jpg) center right/cover no-repeat;">
+		<div class="max-w-xl mx-auto">
+			<!-- Logo -->
+			<img src="./images/logo-head.svg" class="w-full mt-8 lg:mt-4" />
+			<!-- Description -->
+			<div class="text-3xl lg:text-5xl font-light pt-2 pb-4">
+				We are coming soon....
+			</div>
+			<!-- Count down -->
+			<div class="grid grid-cols-4 gap-4 lg:gap-6 px-3 py-4">
+				<div class="relative pt_full bg_cerulean rounded-full">
+					<div id="days" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-light leading-none"></div>
+				</div>
+				<div class="relative pt_full bg_turquoise rounded-full">
+					<div id="hours" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-light leading-none"></div>
+				</div>
+				<div class="relative pt_full bg_pacific rounded-full">
+					<div id="minutes" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-light leading-none"></div>
+				</div>
+				<div class="relative pt_full bg_cerulean rounded-full">
+					<div id="seconds" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-4xl lg:text-6xl font-light leading-none"></div>
+				</div>
+			</div>
+			<!-- Slider -->
+			<div class="max-w-sm mx-auto px-16 lg:px-8 py-4">
+				<div class="flip-slider">
+					<div class="flip-frame">
+						<div class="flip">
+							<div class="slide">
+								<div class="relative pt_full bg_cerulean rounded-full">
+									<div class="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 text-xl lg:text-3xl font-light">
+										Buy & Sell your<br/>
+										boat or mooring<br/>
+										securely without<br/>
+										a broker
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="relative pt_full bg_turquoise rounded-full">
+									<div class="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 text-xl lg:text-3xl font-light">
+										Swap usage of<br />
+										your boat or<br />
+										mooring with other<br />
+										boat owners
+									</div>
+								</div>
+							</div>
+							<div class="slide">
+								<div class="relative pt_full bg_pacific rounded-full">
+									<div class="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 text-xl lg:text-3xl font-light">
+										Save up to 10%<br />
+										on all the services<br />
+										your boat<br />
+										requires
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Notify me -->
+			<div class="max-w-sm mx-auto flex flex-col lg:flex-row text-lg leading-tight mt-8">
+				<div class="flex-grow pr-0 lg:pr-8 py-2">
+					<input
+						id="notify-input"
+						type="email"
+						name="email"
+						class="py-2 px-2 rounded-lg w-auto lg:w-full text-center text-gray-700"
+						placeholder="Email address"
+					/>
+				</div>
+				<div class="py-2">
+					<button id="notify-button" onclick="handleSubmit()" class="bg_pacific px-2 py-2 rounded-lg w-32" style="outline: none;">
+						<svg id="spinner" class="animate-spin -ml-1 mr-1 h-5 w-5 text-white inline-block hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+				          	<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+				          	<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+				        </svg>
+						Notify me
+					</button>
+				</div>
+			</div>
+			<div id="success-message" class="text-xs text-green-500 hidden">
+				Email sended successfully.
+			</div>
+			<!-- Social -->
+			<div class="pt-8">
+				<div class="flex items-center justify-center">
+					<div class="px-3">
+						<img src="./images/facebook.png" class="w-8" />
+					</div>
+					<div class="px-3">
+						<img src="./images/instagram.png" class="w-8" />
+					</div>
+					<div class="px-3">
+						<img src="./images/twitter.png" class="w-8" />
+					</div>
+					<div class="px-3">
+						<img src="./images/pinterest.png" class="w-8" />
+					</div>
+					<div class="px-3">
+						<img src="./images/youtube.png" class="w-8" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- JS -->
+	<!-- Jquery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- Flip slider js -->
+	<script type="text/javascript" src="./slider/flipslide.js"></script>
+	<!-- Custom js -->
+	<script>
+		// Count down
+		function makeTimer() {
+
+			var endTime = new Date("14 June 2021");			
+			endTime = (Date.parse(endTime) / 1000);
+
+			var now = new Date();
+			now = (Date.parse(now) / 1000);
+
+			var timeLeft = endTime - now;
+
+			var days = Math.floor(timeLeft / 86400); 
+			var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+			var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+			var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+  
+			if (hours < "10") { hours = "0" + hours; }
+			if (minutes < "10") { minutes = "0" + minutes; }
+			if (seconds < "10") { seconds = "0" + seconds; }
+
+			$("#days").html(days + "<div class='text-xs lg:text-lg font-extralight'><small>DAYS</small></div>");
+			$("#hours").html(hours + "<div class='text-xs lg:text-lg font-extralight'><small>HOURS</small></div>");
+			$("#minutes").html(minutes + "<div class='text-xs lg:text-lg font-extralight'><small>MINUTES</small></div>");
+			$("#seconds").html(seconds + "<div class='text-xs lg:text-lg font-extralight'><small>SECONDS</small></div>");		
+
+		}
+		setInterval(function() { makeTimer(); }, 1000);
+
+		// Submit form
+		function handleSubmit() {
+			const email = $('input[name=email]').val();
+
+			const data = {
+				"interested": [],
+				"email": email
+			}
+
+			if (email) {
+				$('#notify-button').prop( "disabled", true );
+				$('#spinner').removeClass('hidden');
+
+				$.ajax({
+					type: "POST",
+					url: "https://beta.yachtsmart.com/subscribe",
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+						'Access-Control-Allow-Credentials': 'true',
+						'Content-Type': 'application/json',
+						'Accept': 'application/json',
+					},
+					data: data,
+					success: () => {
+						$('#success-message').removeClass('hidden');
+						$('#notify-button').prop( "disabled", false );
+						$('#spinner').addClass('hidden');
+
+						setTimeout(() => {
+							$('#success-message').addClass('hidden');
+						}, 3000);
+					},
+					error: () => {
+						$('#notify-button').prop( "disabled", false );
+						$('#spinner').addClass('hidden');
+					}
+				});
+			}
+
+		}
+
+	</script>
+</body>
+</html>
