@@ -84,6 +84,7 @@ function FlipSlider(options) {
 
         // Event Bindings
         slider.onclick = instance.nextFlip;
+        setInterval(instance.nextFlip, 5 * 1000);
     })(this);
 }
 
