@@ -144,7 +144,7 @@
 		// Count down
 		function makeTimer() {
 
-			var endTime = new Date("14 June 2021");			
+			var endTime = new Date("1 July 2021");			
 			endTime = (Date.parse(endTime) / 1000);
 
 			var now = new Date();
@@ -185,12 +185,7 @@
 				$.ajax({
 					type: "POST",
 					url: "https://beta.yachtsmart.com/subscribe",
-					headers: {
-						'Access-Control-Allow-Origin': '*',
-						'Access-Control-Allow-Credentials': 'true',
-						'Content-Type': 'application/json',
-						'Accept': 'application/json',
-					},
+					dataType: 'json',
 					data: data,
 					success: () => {
 						$('#success-message').removeClass('hidden');
